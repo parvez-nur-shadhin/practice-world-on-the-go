@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './Country.css'
 
-export default function Country({country}) {
+export default function Country({country, visitedCountry}) {
 
-    const [visited, setVisited] = useState(true);
+    const [visited, setVisited] = useState(false);
     const handleButton= () => {
-        setVisited(!visited)
+        setVisited(!visited);
+        visitedCountry({country});
     }
 
     return(
